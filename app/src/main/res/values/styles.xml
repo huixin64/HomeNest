@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- Removed conflicting color references -->
+    </style>
+
+    <!-- Circle Image View Style -->
+    <style name="CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.HomeNest.AppBarOverlay" parent="ThemeOverlay.Material3.ActionBar" />
+    <style name="Theme.HomeNest.PopupOverlay" parent="ThemeOverlay.Material3.Dialog" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- You might have other styles here that need updating if they reference the old color names -->
+</resources> 

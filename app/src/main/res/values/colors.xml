@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="status_pending">#FFA500</color>
+    <color name="status_confirmed">#4CAF50</color>
+    <color name="status_completed">#2196F3</color>
+    <color name="status_cancelled">#F44336</color>
+
+    <!-- Base colors -->
+    <color name="gray">#757575</color>
+    <color name="light_gray">#BDBDBD</color>
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    <color name="info">#2196F3</color>
+
+    <!-- Brown Palette (Material Design attributes) -->
+    <!-- These colors are used by the theme -->
+    <color name="colorPrimary">#A0522D</color> <!-- Sienna - Main Brown -->
+    <color name="colorPrimaryVariant">#8B4513</color> <!-- SaddleBrown -->
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#CD853F</color> <!-- Peru -->
+    <color name="colorSecondaryVariant">#F5F5DC</color> <!-- Beige -->
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorBackground">#F5F5DC</color> <!-- Beige -->
+    <color name="colorOnBackground">#000000</color> <!-- Black -->
+    <color name="brown_primary">#795548</color>
+
+</resources>

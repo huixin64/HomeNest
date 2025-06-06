@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HomeNest</string>
+    
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    
+    <!-- User Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_bookings">My Bookings</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Admin Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_manage_bookings">Manage Bookings</string>
+    <string name="nav_properties">Properties</string>
+    <string name="nav_pricing">Pricing</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Logout</string>
+    
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="staff_id">Staff ID</string>
+    
+    <!-- Validation Messages -->
+    <string name="error_required_field">This field is required</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_password_length">Password must be at least 6 characters</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    
+    <!-- Success Messages -->
+    <string name="success_registration">Registration successful</string>
+    <string name="success_login">Login successful</string>
+    <string name="success_password_reset">Password reset email sent</string>
+    
+    <!-- Error Messages -->
+    <string name="error_registration">Registration failed: %1$s</string>
+    <string name="error_login">Login failed: %1$s</string>
+    <string name="error_password_reset">Failed to send reset email: %1$s</string>
+    <string name="error_invalid_account">Invalid account type</string>
+</resources>
