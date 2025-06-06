@@ -164,7 +164,7 @@ public class AdminPropertiesActivity extends AppCompatActivity implements AdminP
     @Override
     public void onPropertyEdit(Property property) {
         Intent intent = new Intent(this, EditPropertyActivity.class);
-        intent.putExtra("property_id", property.getId());
+        intent.putExtra("propertyId", property.getId());
         intent.putExtra("admin_email", adminEmail);
         startActivity(intent);
     }
@@ -217,7 +217,6 @@ public class AdminPropertiesActivity extends AppCompatActivity implements AdminP
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         navigateBackToDashboard();
     }
 

@@ -59,6 +59,10 @@
             android:name=".AddPropertyActivity"
             android:exported="false"
             android:parentActivityName=".AdminPropertiesActivity" />
+        <activity
+            android:name=".EditPropertyActivity"
+            android:exported="false"
+            android:parentActivityName=".AdminPropertiesActivity" />
     </application>
 
 </manifest>
