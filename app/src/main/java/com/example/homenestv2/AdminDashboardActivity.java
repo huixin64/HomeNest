@@ -77,6 +77,13 @@ public class AdminDashboardActivity extends AppCompatActivity implements Navigat
             intent = new Intent(this, AdminBookingsActivity.class);
         } else if (id == R.id.nav_profile) {
             intent = new Intent(this, AdminProfileActivity.class);
+            String adminEmail = mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getEmail() : null;
+            if (adminEmail != null) {
+                intent.putExtra("admin_email", adminEmail);
+            } else {
+                Toast.makeText(this, "Error: User not logged in", Toast.LENGTH_SHORT).show();
+                return true;
+            }
         } else if (id == R.id.nav_settings) {
             intent = new Intent(this, AdminProfileActivity.class);
         } else if (id == R.id.nav_logout) {

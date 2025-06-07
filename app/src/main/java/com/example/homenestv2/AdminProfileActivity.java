@@ -1,7 +1,10 @@
 package com.example.homenestv2;
 
+import static androidx.constraintlayout.widget.ConstraintLayoutStates.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +51,7 @@ public class AdminProfileActivity extends AppCompatActivity {
         
         // Get admin email from intent
         adminEmail = getIntent().getStringExtra("admin_email");
+        Log.d("AdminProfileActivity", "Admin email: " + adminEmail);
 
         setupToolbar();
         initializeViews();
@@ -89,10 +93,17 @@ public class AdminProfileActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
+        Log.d(TAG, "admin_email: " + adminEmail);
         btnEditProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(this, EditProfileActivity.class);
-            intent.putExtra("admin_email", adminEmail);
-            startActivity(intent);
+            if (adminEmail != null) {
+                Intent intent = new Intent(this, EditProfileActivity.class);
+                intent.putExtra("admin_email", adminEmail);
+                Log.d("onclick_editP", "enter");
+                startActivity(intent);
+                Log.d("onclick_editP", "exit");
+            } else {
+                Toast.makeText(this, "Admin email is missing!", Toast.LENGTH_SHORT).show();
+            }
         });
 
         btnChangePassword.setOnClickListener(v -> {

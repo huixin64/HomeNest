@@ -75,6 +75,10 @@
             android:name=".WebViewActivity"
             android:exported="false"
             android:parentActivityName=".AdminSettingsActivity" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".AdminProfileActivity" />
     </application>
 
 </manifest>
