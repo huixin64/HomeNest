@@ -32,19 +32,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        setupToolbar();
-        initializeViews();
-        setupClickListeners();
-    }
-
-    private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Change Password");
         }
+
+        initializeViews();
+        setupClickListeners();
     }
 
     private void initializeViews() {
@@ -139,7 +135,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

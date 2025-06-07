@@ -63,6 +63,18 @@
             android:name=".EditPropertyActivity"
             android:exported="false"
             android:parentActivityName=".AdminPropertiesActivity" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false"
+            android:parentActivityName=".AdminSettingsActivity" />
+        <activity
+            android:name=".UpdateEmailActivity"
+            android:exported="false"
+            android:parentActivityName=".AdminSettingsActivity" />
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="false"
+            android:parentActivityName=".AdminSettingsActivity" />
     </application>
 
 </manifest>

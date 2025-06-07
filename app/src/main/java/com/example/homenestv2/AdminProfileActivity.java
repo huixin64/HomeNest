@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -27,6 +28,14 @@ public class AdminProfileActivity extends AppCompatActivity {
     private TextView tvName, tvEmail;
     private TextView tvTotalProperties, tvTotalBookings, tvTotalRevenue;
     private MaterialButton btnEditProfile, btnChangePassword, btnNotifications, btnHelp, btnLogout;
+
+    // Settings UI Components
+    private SwitchMaterial switchNotifications;
+    private SwitchMaterial switchEmailAlerts;
+    private MaterialButton buttonUpdateEmail;
+    private MaterialButton buttonPrivacyPolicy;
+    private MaterialButton buttonTermsOfService;
+    private TextView textViewVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +78,14 @@ public class AdminProfileActivity extends AppCompatActivity {
         btnNotifications = findViewById(R.id.btnNotifications);
         btnHelp = findViewById(R.id.btnHelp);
         btnLogout = findViewById(R.id.btnLogout);
+
+        // Initialize Settings Views
+        switchNotifications = findViewById(R.id.switchNotifications);
+        switchEmailAlerts = findViewById(R.id.switchEmailAlerts);
+        buttonUpdateEmail = findViewById(R.id.buttonUpdateEmail);
+        buttonPrivacyPolicy = findViewById(R.id.buttonPrivacyPolicy);
+        buttonTermsOfService = findViewById(R.id.buttonTermsOfService);
+        textViewVersion = findViewById(R.id.textViewVersion);
     }
 
     private void setupClickListeners() {
@@ -84,16 +101,43 @@ public class AdminProfileActivity extends AppCompatActivity {
         });
 
         btnNotifications.setOnClickListener(v -> {
-            Intent intent = new Intent(this, NotificationsActivity.class);
-            startActivity(intent);
+            Toast.makeText(this, "Notifications button clicked (Integrate logic or navigate)", Toast.LENGTH_SHORT).show();
         });
 
         btnHelp.setOnClickListener(v -> {
-            Intent intent = new Intent(this, HelpSupportActivity.class);
-            startActivity(intent);
+            Toast.makeText(this, "Help & Support button clicked (Integrate logic or navigate)", Toast.LENGTH_SHORT).show();
         });
 
         btnLogout.setOnClickListener(v -> showLogoutConfirmation());
+
+        // Settings Click Listeners (Copied from AdminSettingsActivity)
+        switchNotifications.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Toast.makeText(this, "Notifications " + (isChecked ? "enabled" : "disabled") + " (Save setting)", Toast.LENGTH_SHORT).show();
+        });
+
+        switchEmailAlerts.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Toast.makeText(this, "Email alerts " + (isChecked ? "enabled" : "disabled") + " (Save setting)", Toast.LENGTH_SHORT).show();
+        });
+
+        buttonUpdateEmail.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminProfileActivity.this, UpdateEmailActivity.class);
+            intent.putExtra("admin_email", adminEmail);
+            startActivity(intent);
+        });
+
+        buttonPrivacyPolicy.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminProfileActivity.this, WebViewActivity.class);
+            intent.putExtra("title", "Privacy Policy");
+            intent.putExtra("url", "https://www.example.com/privacy");
+            startActivity(intent);
+        });
+
+        buttonTermsOfService.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminProfileActivity.this, WebViewActivity.class);
+            intent.putExtra("title", "Terms of Service");
+            intent.putExtra("url", "https://www.example.com/terms");
+            startActivity(intent);
+        });
     }
 
     private void loadAdminData() {
@@ -161,6 +205,20 @@ public class AdminProfileActivity extends AppCompatActivity {
                 });
     }
 
+    private void loadSettings() {
+        // TODO: Load saved settings from SharedPreferences or Firebase
+        // Example: Load notification and email alert settings
+        // boolean notificationsEnabled = getNotificationsSetting();
+        // boolean emailAlertsEnabled = getEmailAlertsSetting();
+        // switchNotifications.setChecked(notificationsEnabled);
+        // switchEmailAlerts.setChecked(emailAlertsEnabled);
+
+        // For now, setting default checked state and version text
+        switchNotifications.setChecked(true);
+        switchEmailAlerts.setChecked(true);
+        textViewVersion.setText("Version 1.0.0");
+    }
+
     private void showLogoutConfirmation() {
         new AlertDialog.Builder(this)
                 .setTitle("Logout")
@@ -188,6 +246,7 @@ public class AdminProfileActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadAdminData(); // Refresh data when returning from other activities
+        loadAdminData();
+        loadSettings();
     }
 } 

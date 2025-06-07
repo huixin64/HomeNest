@@ -78,7 +78,7 @@ public class AdminDashboardActivity extends AppCompatActivity implements Navigat
         } else if (id == R.id.nav_profile) {
             intent = new Intent(this, AdminProfileActivity.class);
         } else if (id == R.id.nav_settings) {
-            intent = new Intent(this, AdminSettingsActivity.class);
+            intent = new Intent(this, AdminProfileActivity.class);
         } else if (id == R.id.nav_logout) {
             mAuth.signOut();
             Intent loginIntent = new Intent(this, LoginActivity.class);
